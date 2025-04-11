@@ -5,8 +5,14 @@ import java.util.ArrayList;
 public class Empresa {
     private ArrayList<Funcionario> funcionarios;
     private ArrayList<Projeto> projetos;
+    
+    public Empresa(){
+        this.funcionarios = new ArrayList<>();
+        this.projetos = new ArrayList<>();
+    }
 
     public void cadastrarFuncionario(Funcionario p) {
+
         if (this.funcionarios.stream().anyMatch(funcionario -> funcionario.equals(p))) {
             System.out.println("Este funcionário já está na empresa ❌");
             return;
