@@ -1,4 +1,4 @@
-package atividadesLive.gpt.personagemCadastroJogo;
+package atividadesLive.attGpt.personagemCadastroJogo;
 
 public class Personagem {
     private String nome;

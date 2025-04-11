@@ -1,7 +1,6 @@
-package atividadesLive.gpt.personagemCadastroJogo;
+package atividadesLive.attGpt.personagemCadastroJogo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Jogo {
     ArrayList<Personagem> personagens;
@@ -18,7 +17,6 @@ public class Jogo {
         }
         this.personagens.add(personagem);
         System.out.println("Personagem adicionado com sucesso 👍🤠");
-
 
     }
 
