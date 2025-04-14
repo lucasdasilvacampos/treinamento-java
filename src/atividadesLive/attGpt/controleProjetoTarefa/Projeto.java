@@ -7,33 +7,20 @@ public class Projeto {
     private String nome;
     private ArrayList<Tarefa> tarefas;
 
-    public Projeto(String nome) {
+    public Projeto(String nome, ArrayList<Projeto> novosProjetos) {
         this.nome = nome;
         this.tarefas = new ArrayList<>();
+        this.id = calcularNovoId(novosProjetos);
     }
 
-    public void adicionarTarefa(Tarefa tarefa) {
+    public void adicionarTarefa(String t) {
+        Tarefa tarefa = new Tarefa(t, getTarefas());
         if (this.tarefas.stream().anyMatch(tarefa1 -> tarefa1.equals(tarefa))) {
             System.out.println("Esta tarefa já está no projeto ❌");
             return;
         }
         System.out.println("Tarefa adicionada ao projeto 🤠👍");
         this.tarefas.add(tarefa);
-    }
-
-    public void listarTarefas() {
-        for (Tarefa tarefa : this.tarefas) {
-            tarefa.mostrarDetalhe();
-        }
-    }
-
-    public void listarTarefasPedentes() {
-        for (Tarefa tarefa : this.tarefas) {
-            if (!tarefa.marcarComoConcluida()) {
-                tarefa.mostrarDetalhe();
-            }
-            System.out.println("Não tem tarefas pedentes 😮");
-        }
     }
 
     public int calcularNovoId(ArrayList<Projeto> projetosExistentes) {

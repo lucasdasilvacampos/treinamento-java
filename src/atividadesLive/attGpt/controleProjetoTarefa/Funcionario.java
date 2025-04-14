@@ -28,6 +28,7 @@ public class Funcionario {
         }
         System.out.println("Tarefa atribuida ao funcionario com sucesso 👍🤠");
         this.tarefas.add(tarefa);
+        tarefa.setResponsavel(this);
     }
 
     public void listarTarefas() {

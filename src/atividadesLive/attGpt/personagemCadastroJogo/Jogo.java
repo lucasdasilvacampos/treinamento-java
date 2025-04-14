@@ -27,8 +27,8 @@ public class Jogo {
                 break;
             }
             this.personagens.add(personagem);
-            System.out.println("Personagens adicionado com sucesso 👍🤠");
         }
+        System.out.println("Personagens adicionado com sucesso 👍🤠");
     }
 
     public void listarPersonagens() {

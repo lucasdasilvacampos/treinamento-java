@@ -32,15 +32,21 @@ public class MenuPrincipal {
                     jogo.adicionarPersonagem(personagem);
                     break;
                 case 2:
-                    System.out.println("Digite o nome do personagem:");
+                    System.out.println("Digite um numero de personagens que deseja adicionar:");
+                    int quantidade = input.nextInt();
                     input.nextLine();
-                    String nomeP = input.nextLine();
-                    System.out.println("Digite a classe do personagem:");
-                    String classeP = input.nextLine();
-                    System.out.println("Digite o nível do personagem:");
-                    int nivelP = input.nextInt();
-                    personagem = new Personagem(nomeP,classeP,nivelP);
-                    jogo.adicionarPersonagem(personagem);
+                    Personagem[] personagems = new Personagem[quantidade];
+                    for (int i = 0; i < quantidade; i++) {
+                        System.out.println("Digite o nome do personagem:");
+                        String nomeP = input.nextLine();
+                        System.out.println("Digite a classe do personagem:");
+                        String classeP = input.nextLine();
+                        System.out.println("Digite o nível do personagem:");
+                        int nivelP = input.nextInt();
+                        input.nextLine();
+                        personagems[i] = new Personagem(nomeP,classeP,nivelP);
+                    }
+                    jogo.adicionarPersonagem(personagems);
                     break;
                 case 3:
                     if (jogo.getPersonagens() == null){
